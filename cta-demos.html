@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skadefinder CTA – Designvarianter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Albert Sans', -apple-system, sans-serif; background: #F7F8FA; color: #21232C; padding: 40px 20px; }
+    .page { max-width: 680px; margin: 0 auto; }
+    .page-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .page-desc { font-size: 14px; color: #535865; margin-bottom: 48px; }
+
+    /* Fake article context */
+    .article-context { background: #FFF; border-radius: 16px; padding: 32px; margin-bottom: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .article-context h3 { font-size: 13px; color: #407A95; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; font-weight: 600; }
+    .fake-text { font-size: 15px; line-height: 1.7; color: #535865; margin-bottom: 16px; }
+    .fake-text:last-of-type { margin-bottom: 24px; }
+    .variant-label { display: inline-block; font-size: 11px; font-weight: 600; color: #FFF; background: #407A95; padding: 3px 10px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.5px; }
+
+    /* ========================================= */
+    /* VARIANT 1: Premium Dark */
+    /* ========================================= */
+    .cta-v1 {
+      background: #21232C;
+      border-radius: 16px;
+      padding: 28px;
+      margin: 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .cta-v1-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: #EBFA53;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 24px;
+    }
+    .cta-v1-text { flex: 1; }
+    .cta-v1-title { font-size: 15px; font-weight: 600; color: #FFF; margin-bottom: 4px; }
+    .cta-v1-desc { font-size: 13px; color: #A6A7AB; line-height: 1.4; }
+    .cta-v1-btn {
+      padding: 12px 24px;
+      background: #EBFA53;
+      color: #21232C;
+      border: none; border-radius: 50px;
+      font-family: inherit; font-size: 14px; font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-v1-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(235,250,83,0.3); }
+
+    @media (max-width: 540px) {
+      .cta-v1 { flex-direction: column; text-align: center; }
+      .cta-v1-btn { width: 100%; }
+    }
+
+    /* ========================================= */
+    /* VARIANT 2: Minimal inline */
+    /* ========================================= */
+    .cta-v2 {
+      margin: 24px 0;
+      padding: 20px 24px;
+      border-radius: 12px;
+      background: #FEFFF8;
+      border: 1px solid #F0FA7E;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cta-v2-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #EBFA53;
+      flex-shrink: 0;
+    }
+    .cta-v2-text {
+      font-size: 14px; color: #535865; flex: 1; line-height: 1.5;
+    }
+    .cta-v2-link {
+      font-size: 14px; font-weight: 600; color: #407A95;
+      text-decoration: none; white-space: nowrap; cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .cta-v2-link:hover { border-bottom-color: #407A95; }
+
+    /* ========================================= */
+    /* VARIANT 3: Card med ikon-grid */
+    /* ========================================= */
+    .cta-v3 {
+      margin: 24px 0;
+      border-radius: 16px;
+      background: #FFF;
+      border: 1px solid #E0E2E6;
+      overflow: hidden;
+    }
+    .cta-v3-top {
+      padding: 24px 24px 16px;
+    }
+    .cta-v3-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: #FEFFF8;
+      border: 1px solid #F0FA7E;
+      font-size: 11px; font-weight: 600; color: #21232C;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+    .cta-v3-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #EBFA53; }
+    .cta-v3-title { font-size: 17px; font-weight: 600; color: #21232C; margin-bottom: 4px; }
+    .cta-v3-desc { font-size: 13px; color: #535865; line-height: 1.5; }
+    .cta-v3-icons {
+      display: flex; gap: 0; border-top: 1px solid #E0E2E6;
+    }
+    .cta-v3-icon-item {
+      flex: 1;
+      padding: 14px 8px;
+      text-align: center;
+      border-right: 1px solid #E0E2E6;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .cta-v3-icon-item:last-child { border-right: none; }
+    .cta-v3-icon-item:hover { background: #F7F8FA; }
+    .cta-v3-icon-emoji { font-size: 20px; margin-bottom: 4px; }
+    .cta-v3-icon-label { font-size: 11px; color: #535865; font-weight: 500; }
+
+    /* ========================================= */
+    /* VARIANT 4: Glassmorphism / Gradient */
+    /* ========================================= */
+    .cta-v4 {
+      margin: 24px 0;
+      border-radius: 16px;
+      padding: 28px;
+      background: linear-gradient(135deg, #21232C 0%, #373941 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-v4::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(235,250,83,0.15) 0%, transparent 70%);
+    }
+    .cta-v4-eyebrow {
+      font-size: 11px; font-weight: 600; color: #EBFA53;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .cta-v4-title { font-size: 18px; font-weight: 600; color: #FFF; margin-bottom: 6px; }
+    .cta-v4-desc { font-size: 13px; color: #A6A7AB; margin-bottom: 20px; line-height: 1.5; }
+    .cta-v4-row { display: flex; align-items: center; gap: 16px; }
+    .cta-v4-btn {
+      padding: 12px 28px;
+      background: #EBFA53;
+      color: #21232C;
+      border: none; border-radius: 50px;
+      font-family: inherit; font-size: 14px; font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-v4-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(235,250,83,0.3); }
+    .cta-v4-meta { font-size: 12px; color: #7A7B80; }
+
+    /* ========================================= */
+    /* VARIANT 5: Sticky bottom bar */
+    /* ========================================= */
+    .cta-v5-demo {
+      margin: 24px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E0E2E6;
+    }
+    .cta-v5-phone {
+      background: #FFF;
+      padding: 24px;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #BCBDC0;
+      font-size: 14px;
+    }
+    .cta-v5 {
+      background: #FFF;
+      border-top: 1px solid #E0E2E6;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cta-v5-text { flex: 1; font-size: 13px; color: #535865; font-weight: 500; }
+    .cta-v5-btn {
+      padding: 10px 20px;
+      background: #EBFA53;
+      color: #21232C;
+      border: none; border-radius: 50px;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s;
+    }
+    .cta-v5-btn:hover { transform: translateY(-1px); }
+
+    /* ========================================= */
+    /* VARIANT 6: Inline quiz-teaser */
+    /* ========================================= */
+    .cta-v6 {
+      margin: 24px 0;
+      border-radius: 16px;
+      background: #FFF;
+      border: 1px solid #E0E2E6;
+      padding: 24px;
+    }
+    .cta-v6-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .cta-v6-logo {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: #EBFA53;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .cta-v6-header-text { font-size: 13px; font-weight: 600; color: #21232C; }
+    .cta-v6-header-sub { font-size: 11px; color: #535865; font-weight: 400; }
+    .cta-v6-question {
+      font-size: 16px; font-weight: 600; color: #21232C;
+      margin-bottom: 16px;
+    }
+    .cta-v6-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cta-v6-option {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: 16px 12px;
+      background: #F7F8FA;
+      border: 1px solid #E0E2E6;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .cta-v6-option:hover { border-color: #407A95; background: #FFF; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .cta-v6-option-icon { font-size: 22px; }
+    .cta-v6-option-label { font-size: 12px; font-weight: 500; color: #21232C; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1 class="page-title">Skadefinder CTA – Designvarianter</h1>
+    <p class="page-desc">6 bud på hvordan CTA'en kan se ud inde i artiklerne. Klik gør ingenting – det er kun visuelt.</p>
+
+    <!-- VARIANT 1 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 1 — Premium Dark</span>
+      <h3>Artikel: Akillessmerter hos løbere</h3>
+      <p class="fake-text">Akillessenen er den tykkeste og stærkeste sene i kroppen, men den er også en af de mest udsatte for overbelastning hos løbere. Smerterne starter typisk som en let stivhed om morgenen...</p>
+      <p class="fake-text">Den gode nyhed er, at belastning er den vigtigste behandling. Men det kræver at du ved, hvad du har med at gøre.</p>
+
+      <div class="cta-v1">
+        <div class="cta-v1-icon">🔍</div>
+        <div class="cta-v1-text">
+          <div class="cta-v1-title">Usikker på din skade?</div>
+          <div class="cta-v1-desc">Få et kvalificeret bud på diagnosen på under 2 minutter.</div>
+        </div>
+        <button class="cta-v1-btn">Prøv skadefinder</button>
+      </div>
+
+      <p class="fake-text">Mange løbere begår den fejl at stoppe helt med at løbe, men forskningen viser tydeligt at gradvis belastning er vejen frem...</p>
+    </div>
+
+    <!-- VARIANT 2 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 2 — Minimal Inline</span>
+      <h3>Artikel: Knæsmerter ved løb</h3>
+      <p class="fake-text">Løberknæ er den hyppigste skade blandt løbere og rammer op mod 25% på et givet tidspunkt. Smerten sidder typisk omkring eller bag knæskallen og forværres af trapper og bakker.</p>
+
+      <div class="cta-v2">
+        <div class="cta-v2-dot"></div>
+        <span class="cta-v2-text">Usikker på om det er løberknæ eller noget andet?</span>
+        <a class="cta-v2-link">Prøv skadefinder →</a>
+      </div>
+
+      <p class="fake-text">Det vigtigste i den akutte fase er at reducere belastningen – men ikke at stoppe helt. Isometriske øvelser har vist sig effektive...</p>
+    </div>
+
+    <!-- VARIANT 3 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 3 — Card med kropsområder</span>
+      <h3>Artikel: De 5 hyppigste løbeskader</h3>
+      <p class="fake-text">Løbeskader er frustrerende, men de fleste er overbelastningsskader der responderer godt på den rette genoptræning. Nøglen er at finde ud af præcis hvad du har med at gøre.</p>
+
+      <div class="cta-v3">
+        <div class="cta-v3-top">
+          <div class="cta-v3-badge"><span class="cta-v3-badge-dot"></span> SKADEFINDER</div>
+          <div class="cta-v3-title">Hvor har du ondt?</div>
+          <div class="cta-v3-desc">Vælg kropsområde og find din skade på 2 minutter.</div>
+        </div>
+        <div class="cta-v3-icons">
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🦶</div><div class="cta-v3-icon-label">Fod</div></div>
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🦴</div><div class="cta-v3-icon-label">Underben</div></div>
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🦵</div><div class="cta-v3-icon-label">Knæ</div></div>
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🦵</div><div class="cta-v3-icon-label">Lår</div></div>
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🍑</div><div class="cta-v3-icon-label">Hofte</div></div>
+          <div class="cta-v3-icon-item"><div class="cta-v3-icon-emoji">🧍</div><div class="cta-v3-icon-label">Ryg</div></div>
+        </div>
+      </div>
+
+      <p class="fake-text">Uanset hvilken skade du har, er princippet det samme: find den rette dosis belastning og byg langsomt op.</p>
+    </div>
+
+    <!-- VARIANT 4 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 4 — Gradient / Premium</span>
+      <h3>Artikel: Skinnebensbetændelse</h3>
+      <p class="fake-text">Skinnebensbetændelse (medial tibial stress syndrom) er en af de mest frustrerende løbeskader, fordi den ofte vender tilbage hvis man ikke håndterer den korrekt fra start.</p>
+
+      <div class="cta-v4">
+        <div class="cta-v4-eyebrow">Skadefinder</div>
+        <div class="cta-v4-title">Find ud af hvad der gør ondt – og hvad du kan gøre</div>
+        <div class="cta-v4-desc">Svar på 6 spørgsmål og få et kvalificeret bud på din skade, prognose og en personlig genoptræningsplan.</div>
+        <div class="cta-v4-row">
+          <button class="cta-v4-btn">Start skadefinder</button>
+          <span class="cta-v4-meta">Tager ca. 2 min</span>
+        </div>
+      </div>
+
+      <p class="fake-text">Det vigtigste er at forstå forskellen på skinnebensbetændelse og stressfraktur, da behandlingen er markant anderledes...</p>
+    </div>
+
+    <!-- VARIANT 5 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 5 — Sticky Bottom Bar (simuleret)</span>
+      <h3>Artikel: Plantar fasciitis</h3>
+      <p class="fake-text">Plantar fasciitis er kendetegnet ved smerte under hælen, især de første skridt om morgenen. Det er en af de mest langvarige løbeskader hvis den ikke gribes an korrekt.</p>
+      <p class="fake-text">Den gode nyhed er at forskningen de seneste år har givet os langt bedre forståelse af tilstanden, og at de fleste kan løbe sig igennem med den rette tilgang.</p>
+
+      <div class="cta-v5-demo">
+        <div class="cta-v5-phone">↑ Resten af artiklen vises her ↑</div>
+        <div class="cta-v5">
+          <span class="cta-v5-text">Har du ondt? Find din skade</span>
+          <button class="cta-v5-btn">Prøv skadefinder →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VARIANT 6 -->
+    <div class="article-context">
+      <span class="variant-label">Variant 6 — Quiz-teaser (interaktiv)</span>
+      <h3>Artikel: Når løb gør ondt</h3>
+      <p class="fake-text">Smerte under løb er ikke nødvendigvis farligt – men det er et signal om at noget skal justeres. Det første skridt er at forstå hvad der forårsager smerten.</p>
+
+      <div class="cta-v6">
+        <div class="cta-v6-header">
+          <div class="cta-v6-logo">
+            <svg width="16" height="19" viewBox="0 0 679 814" fill="none"><g transform="translate(-141.039,-111.732)"><g transform="matrix(8.31127,0,0,8.31127,99.1558,-1033)"><path d="M64.353,235.663L54.023,235.663C52.919,235.663 52.023,234.767 52.023,233.663C52.023,232.558 52.919,231.663 54.023,231.663L62.943,231.663L81.842,178.685L54.023,178.685C52.919,178.685 52.023,177.79 52.023,176.685C52.023,175.581 52.919,174.685 54.023,174.685L84.679,174.685C85.329,174.685 85.938,175.002 86.313,175.533C86.688,176.064 86.781,176.745 86.562,177.357L66.237,234.335C65.953,235.132 65.199,235.663 64.353,235.663Z" fill="#21232C"/><path d="M59.898,227.003L55.646,227.003L70.815,183.354L75.067,183.354L59.898,227.003Z" fill="#21232C"/><path d="M79.348,170.03L47.859,170.03C46.755,170.03 45.859,169.134 45.859,168.03C45.859,166.925 46.755,166.03 47.859,166.03L79.348,166.03C80.452,166.03 81.348,166.925 81.348,168.03C81.348,169.134 80.452,170.03 79.348,170.03Z" fill="#21232C"/><path d="M27.365,137.732L37.695,137.732C38.8,137.732 39.695,138.627 39.695,139.732C39.695,140.836 38.8,141.732 37.695,141.732L28.775,141.732L9.877,194.709L37.695,194.709C38.8,194.709 39.695,195.605 39.695,196.709C39.695,197.814 38.8,198.709 37.695,198.709L7.04,198.709C6.39,198.709 5.78,198.393 5.405,197.862C5.03,197.33 4.937,196.65 5.156,196.037L25.481,139.06C25.766,138.263 26.519,137.732 27.365,137.732Z" fill="#21232C"/><path d="M31.821,146.391L36.072,146.391L20.903,190.041L16.652,190.041L31.821,146.391Z" fill="#21232C"/><path d="M12.371,203.365L43.859,203.365C44.964,203.365 45.859,204.26 45.859,205.365C45.859,206.469 44.964,207.365 43.859,207.365L12.371,207.365C11.267,207.365 10.371,206.469 10.371,205.365C10.371,204.26 11.267,203.365 12.371,203.365Z" fill="#21232C"/></g></g></svg>
+          </div>
+          <div>
+            <div class="cta-v6-header-text">Skadefinder <span class="cta-v6-header-sub">fra LøberLab</span></div>
+          </div>
+        </div>
+        <div class="cta-v6-question">Hvor har du ondt?</div>
+        <div class="cta-v6-options">
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🦶</span><span class="cta-v6-option-label">Fod</span></a>
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🦴</span><span class="cta-v6-option-label">Underben</span></a>
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🦵</span><span class="cta-v6-option-label">Knæ</span></a>
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🦵</span><span class="cta-v6-option-label">Lår</span></a>
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🍑</span><span class="cta-v6-option-label">Hofte</span></a>
+          <a class="cta-v6-option"><span class="cta-v6-option-icon">🧍</span><span class="cta-v6-option-label">Ryg</span></a>
+        </div>
+      </div>
+
+      <p class="fake-text">Når du ved hvad skaden hedder, kan du tage de rigtige skridt. Belastning er behandling – men det skal være den rette dosis.</p>
+    </div>
+
+  </div>
+</body>
+</html>
