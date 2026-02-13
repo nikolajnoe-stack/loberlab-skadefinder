@@ -1037,10 +1037,19 @@ window.llCloseModalOnOverlay = window.llCloseModalOnOverlay || function(e) {
 
   window.llSubmitDemo = function() {
     if (!s.gender || !s.birthdate) return;
-    s.step = 1; render();
+    s.step = s.answers.area ? 2 : 1;
+    render();
   };
 
-  window.llSelectArea = function(id) { s.answers.area = id; s.step = 2; render(); };
+  window.llSelectArea = function(id) {
+    if (!s.gender || !s.birthdate) {
+      s.answers.area = id;
+      s.step = 0;
+      render();
+      return;
+    }
+    s.answers.area = id; s.step = 2; render();
+  };
 
   window.llSelectLocation = function(id) {
     var locs = P[s.answers.area] || [];
