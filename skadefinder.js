@@ -676,7 +676,8 @@ window.llCloseModalOnOverlay = window.llCloseModalOnOverlay || function(e) {
       '<option value="">Vælg køn</option>' +
       '<option value="male"' + (s.gender === 'male' ? ' selected' : '') + '>Mand</option>' +
       '<option value="female"' + (s.gender === 'female' ? ' selected' : '') + '>Kvinde</option></select>' +
-      '<input type="date" class="ll-input" id="ll-demo-birthdate" placeholder="Fødselsdato" value="' + (s.birthdate || '') + '" onchange="window.llUpdateDemoStep()" max="2010-01-01" min="1930-01-01">' +
+      '<label for="ll-demo-birthdate" style="font-size:12px;color:#535865;margin-bottom:4px;display:block">Fødselsdato</label>' +
+      '<input type="date" class="ll-input" id="ll-demo-birthdate" value="' + (s.birthdate || '') + '" onchange="window.llUpdateDemoStep()" max="2010-01-01" min="1930-01-01">' +
       '</div>' +
       '<button class="ll-btn ll-btn-primary" onclick="window.llSubmitDemo()" id="ll-demo-btn"' + (s.gender && s.birthdate ? '' : ' disabled') + '>Næste' +
       '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
