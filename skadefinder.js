@@ -450,7 +450,7 @@ window.llCloseModalOnOverlay = window.llCloseModalOnOverlay || function(e) {
     ],
 
     knee_lateral: [
-      { week: 'Uge 1-2', label: 'Akut smertelindring og hofteaktivering', detail: 'Foam rolling af yderlår og gluteus-aktivering. Reducer løbedistance midlertidigt.', locked: false },
+      { week: 'Uge 1-2', label: 'Akut smertelindring og hofteaktivering', detail: 'Gluteus-aktivering og hoftemobilitet. Reducer løbedistance midlertidigt og undgå bakkeløb nedad.', locked: false },
       { week: '', label: 'Vær opmærksom på', detail: 'Bakkeløb nedad og lange ture på hårdt underlag – det øger trækket på ydersiden af knæet.', locked: false },
       { week: 'Uge 3-6', label: 'Hofte- og gluteus-styrkelse', detail: 'Målrettet program med clamshells, hip abduction og single-leg øvelser for stabilitet.', locked: true },
       { week: 'Uge 7+', label: 'Løbeteknik og distance-opbygning', detail: 'Kadence-optimering og gradvis distance-øgning med løbeplan.', locked: true },
